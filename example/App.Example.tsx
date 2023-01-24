@@ -33,8 +33,10 @@ export const AppExample = React.memo(
 
         const {access_token} = state;
 
-        const {data} = await client.authGet({
+        const {data} = await client.transactionsGet({
           access_token,
+          start_date: "2018-01-01",
+          end_date: "2018-02-01",
         });
 
         console.warn(JSON.stringify(data));

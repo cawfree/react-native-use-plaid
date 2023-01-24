@@ -96,8 +96,10 @@ const {stage} = state;
 
 if (stage !== PlaidLinkStage.SUCCESS) return;
 
-const {data} = await client.authGet({
+const {data} = await client.transactionsGet({
   access_token: state.access_token,
+  start_date: '2018-01-01',
+  end_date: '2018-02-01',
 });
 ```
 
