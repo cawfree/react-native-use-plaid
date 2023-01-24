@@ -145,23 +145,30 @@ Although the link process is relatively quick and simple for a user, it's someth
 In the `PlaidProvider`, you can specify three additional properties to help you resume authentication state:
 
 ```typescript
-<PlaidProvider
-  // On launch, we can synchronously resume user sessions
-  // for individual users if we pass an access_token. Here
-  // we can track the authentication state of multiple users.
-  initialAccessTokens={React.useMemo(() => ({
-    '$myApplicationSpecificUserId': 'someAccessTokenFromPreviousSession',
-  }), [])}
-  // When a user begins a new session, onConnect is called providing
-  // the client_user_id and their access_token.
-  onConnect={React.useCallback(({client_user_id, access_token}) => {
-    console.log(`${client_user_id}'s access_token is "${access_token}"!`);
-  }, [])}
-  // When a user disconnects, `onDisconnect` is called.
-  onDisconnect={React.useCallback(({client_user_id}) => {
-    console.log(`${client_user_id} has disconnected.`);
-  }, [])}
-/>
+import * as React from 'react';
+import {PlaidProvider} from 'react-native-use-plaid';
+
+export default function App(): JSX.Element {
+  return (
+    <PlaidProvider
+      // On launch, we can synchronously resume user sessions
+      // for individual users if we pass an access_token. Here
+      // we can track the authentication state of multiple users.
+      initialAccessTokens={React.useMemo(() => ({
+        '$myApplicationSpecificUserId': 'someAccessTokenFromPreviousSession',
+      }), [])}
+      // When a user begins a new session, onConnect is called providing
+      // the client_user_id and their access_token.
+      onConnect={React.useCallback(({client_user_id, access_token}) => {
+        console.log(`${client_user_id}'s access_token is "${access_token}"!`);
+      }, [])}
+      // When a user disconnects, `onDisconnect` is called.
+      onDisconnect={React.useCallback(({client_user_id}) => {
+        console.log(`${client_user_id} has disconnected.`);
+      }, [])}
+    />
+  );
+}
 ````
 
 In combination with a client persistence library such as [`react-native-async-storage`](https://github.com/react-native-async-storage/async-storage) or [`react-native-mmkv`](https://github.com/mrousavy/react-native-mmkv), user session state can be stored between launches of your application.
