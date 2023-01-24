@@ -1,0 +1,26 @@
+{
+  "name": "react-native-use-plaid",
+  "version": "0.1.0",
+  "description": "⚛️ 💸 Simple hooks for Plaid open banking on React Native.",
+  "main": "dist",
+  "types": "dist",
+  "repository": "https://github.com/cawfree/react-native-use-plaid",
+  "author": "cawfree <hello@cawfree.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "yarn && rm -rf dist ; tsc ; rm -rf node_modules"
+  },
+  "dependencies": {
+    "plaid": "12.3.0",
+    "query-string": "8.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "18.0.27",
+    "@types/react-native": "0.71.0",
+    "typescript": "4.9.4",
+    "react": "18.2.0",
+    "react-native": "0.71.0",
+    "react-native-webview": "11.26.0"
+  }
+}
