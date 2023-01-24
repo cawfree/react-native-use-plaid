@@ -8,7 +8,9 @@ Using [__Yarn__](https://yarnpkg.com/):
 ```shell
 yarn add react-native-use-plaid react-native-webview
 ```
-This project depends on the [`react-native-webview`](https://github.com/react-native-webview/react-native-webview) Native Module. For vanilla React Native projects, you can install this as usual with `yarn add react-native-webview`. For [__Expo__](https://expo.dev/), you can use `npx expo install react-native-webview`.
+This project depends on the [`react-native-webview`](https://github.com/react-native-webview/react-native-webview) Native Module.
+
+> For vanilla React Native projects, you can install this as usual with `yarn add react-native-webview`. For [__Expo__](https://expo.dev/), you can use `npx expo install react-native-webview`.
 
 ## ✍️ Usage
 
