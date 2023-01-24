@@ -8,13 +8,13 @@ Using [__Yarn__](https://yarnpkg.com/):
 ```shell
 yarn add react-native-use-plaid react-native-webview
 ```
-This project depends on the [`react-native-webview`](https://github.com/react-native-webview/react-native-webview) Native Module. For vanilla React Native projects, you can install this as usual with `yarn add react-native-webview`. For Expo, you can use `npx expo install react-native-webview`.
+This project depends on the [`react-native-webview`](https://github.com/react-native-webview/react-native-webview) Native Module. For vanilla React Native projects, you can install this as usual with `yarn add react-native-webview`. For [__Expo__](https://expo.dev/), you can use `npx expo install react-native-webview`.
 
 ## ✍️ Usage
 
 This package manages user bank authentication using [__Plaid Link__](https://plaid.com/docs/link/), which is used to manage authentication and requires permissions to interact with a user's bank account, to do things like [__view their transaction history__](https://plaid.com/products/transactions/) or [__request a payment__](https://plaid.com/en-gb/use-cases/payments/).
 
-We provide the appropriate life cycle hooks to easily initiate, persist, consume and relinquish connections to user bank accounts. Additionally, all user-facing onboarding has been expressed using Plaid's [`WebView`](https://github.com/react-native-webview/react-native-webview) optimized onboarding process, making the native integration as straight-forward as possible.
+We provide the appropriate life cycle hooks to easily initiate, persist, consume and relinquish connections to user bank accounts. Additionally, all user-facing onboarding has been expressed using Plaid's [`WebView`](https://github.com/react-native-webview/react-native-webview)-optimized onboarding process, making the integration process as straight-forward as possible.
 
 ### 1. Configuring the `<PlaidProvider />` 🔧
 
@@ -43,7 +43,7 @@ export default function App(): JSX.Element {
 
 This part is pretty straight forward; you need to head over to the [__Plaid Developer Portal__](https://dashboard.plaid.com/signup) and create some API keys for your application.
 
-For each application instance you register on Plaid, you're going to be given API keys for different environments; `sandbox`, `development` and `production`. You'll see here, we've configured our `PlaidProvider`'s `basePath` to work using `"sandbox"` credentials.
+For each application instance you register on Plaid, you're going to be given API keys for different environments; `sandbox`, `development` and `production`. You'll see here, we've configured our `PlaidProvider`'s `basePath` to work using `sandbox` credentials.
 
 > ⚠️ You __must__ configure a `redirectUri` for your project from your project settings in Plaid, which is configured under [__the API tab__](https://dashboard.plaid.com/team/api) in your [__Team Settings__](https://dashboard.plaid.com/team).
 
@@ -138,7 +138,7 @@ All you need to do is present it; you could mount it in a [`<Modal visible />`](
 
 Without the `PlaidProviderLinkWebView` visible to the user, they will be unable to complete the authentication process. Please check the [__example__](./example) for a simple demonstration of this concept.
 
-### Persistence 💾
+### 3. Persistence 💾
 
 Although the link process is relatively quick and simple for a user, it's something we should avoid doing too often since this inconveniences the user.
 
