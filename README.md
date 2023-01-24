@@ -80,10 +80,10 @@ When a user is connected, their `state` will contain their [__Plaid Access Token
 ```typescript
 import {PlaidLinkSuccessState} from 'react-native-use-plaid';
 
-const {accessToken} = state as PlaidLinkSuccessState;
+const {access_token} = state as PlaidLinkSuccessState;
 ```
 
-The `accessToken` can be used to perform operations on a user account, for example, listing their transactions using the `client` instance returned by a call to `usePlaidLinkState`:
+The `access_token` can be used to perform operations on a user account, for example, listing their transactions using the `client` instance returned by a call to `usePlaidLinkState`:
 
 ```typescript
 import {PlaidLinkStage, usePlaidLinkState} from 'react-native-use-plaid';
@@ -95,7 +95,7 @@ const {stage} = state;
 if (stage !== PlaidLinkStage.SUCCESS) return;
 
 const {data} = await client.authGet({
-  access_token,
+  access_token: state.access_token,
 });
 ```
 
