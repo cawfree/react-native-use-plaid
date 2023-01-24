@@ -43,9 +43,9 @@ export default function App(): JSX.Element {
 }
 ```
 
-This part is pretty straight forward; you need to head over to the [__Plaid Developer Portal__](https://dashboard.plaid.com/signup) and create some API keys for your application.
+This part is pretty straight forward; though you'll need to head over to the [__Plaid Developer Portal__](https://dashboard.plaid.com/signup) and create some API keys for your application.
 
-For each application instance you register on Plaid, you're going to be given API keys for different environments; `sandbox`, `development` and `production`. You'll see here, we've configured our `PlaidProvider`'s `basePath` to work using `sandbox` credentials.
+For each application instance you register on Plaid, you're going to be given three different API keys for three different environments; `sandbox`, `development` and `production`. You'll see in the example above, we've configured our `PlaidProvider`'s `basePath` to work using `sandbox` credentials.
 
 > ⚠️ You __must__ configure a `redirectUri` for your project from your project settings in Plaid, which is configured under [__the API tab__](https://dashboard.plaid.com/team/api) in your [__Team Settings__](https://dashboard.plaid.com/team).
 
