@@ -12,7 +12,7 @@ This project depends on the [`react-native-webview`](https://github.com/react-na
 
 ## ✍️ Usage
 
-This package manages user bank authentication using [__Plaid Link__](https://plaid.com/docs/link/), which is used to manage authentication and requires permissions to interact with a user's bank account, to do things like [__view their transaction history__](https://plaid.com/products/transactions/) or [__request a payment__](https://plaid.com/en-gb/use-cases/payments/).
+This package manages user bank authentication using [__Plaid Link__](https://plaid.com/docs/link/), which is used to orchestrate the authentication and  permissions process necessary to interact with a user's bank account, to do things like [__view their transaction history__](https://plaid.com/products/transactions/) or [__request a payment__](https://plaid.com/en-gb/use-cases/payments/).
 
 We provide the appropriate life cycle hooks to easily initiate, persist, consume and relinquish connections to user bank accounts. Additionally, all user-facing onboarding has been expressed using Plaid's [`WebView`](https://github.com/react-native-webview/react-native-webview)-optimized onboarding process, making the integration process as straight-forward as possible.
 
